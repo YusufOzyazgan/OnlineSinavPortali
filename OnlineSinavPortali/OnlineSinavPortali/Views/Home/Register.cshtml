@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Register";
+}
+@model OnlineSinavPortali.ViewModels.StudentRegisterModel
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        .blurred-image {
+            filter: blur(0px); /* Kenarları 10 piksel bulanıklaştır */
+        }
+        body {
+            background-color: #333; /* Koyu gri */
+            
+        } 
+    </style>
+</head>
+<body>
+    <div class="alert alert-danger" asp-validation-summary="ModelOnly"></div>
+    <div class="container d-flex align-items-center justify-content-center">
+        <img src="~/Photos/TossLogo.jpg" />
+    </div>
+    <div class="container d-flex align-items-center justify-content-center" style="height: 20vh;">
+    
+    <div class="text-center">
+            <a class="text-reset text-decoration-none" asp-area="" asp-controller="Home" asp-action="StudentRegister">
+            <button class="btn btn-primary btn-lg mx-2">
+                Öğrenci Kayıt 
+            </button>
+            </a>
+            <a class="text-reset text-decoration-none" asp-area="" asp-controller="Home" asp-action="TeacherRegister">
+            <button class=" btn btn-success btn-lg mx-2">
+                Öğretmen Kayıt 
+            </button>
+            </a>
+    </div>
+</div>
+</body>
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}

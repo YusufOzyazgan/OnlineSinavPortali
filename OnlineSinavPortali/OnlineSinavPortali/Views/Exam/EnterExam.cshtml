@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewData["Title"] = "EnterExam";
+}
+@model List<OnlineSinavPortali.ViewModels.StudentAnswersModel>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Sınavı</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+<body>
+    <div class="container">
+        @{
+            int i = 0;
+            foreach (var item in Model)
+            {
+                i += 1;
+
+                <div class="container">
+                    <div class="question mt-4">
+                        <h3>@(i) ) @item.QuestionText</h3>
+                        <ul class="list-group options">
+                            <li class="list-group-item option5">
+                                <input type="radio" id="option1" name="question1" value="A">
+                                <label for="option1">A) @item.optionAText</label>
+                            </li>
+                            <li class="list-group-item option4">
+                                <input type="radio" id="option2" name="question1" value="B">
+                                <label for="option2">B) @item.optionBText</label>
+                            </li>
+                            <li class="list-group-item option3">
+                                <input type="radio" id="option3" name="question1" value="C">
+                                <label for="option3">C) @item.optionCText</label>
+                            </li>
+                            <li class="list-group-item option4">
+                                <input type="radio" id="option4" name="question1" value="D">
+                                <label for="option4">D) @item.optionDText</label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            }
+        }
+        
+        <br />
+        <button class="btn btn-primary submit-btn" type="submit">Sınavı Gönder</button>
+        <br />
+        <br />
+        <br />
+        <br />
+    </div>
+
+ 
+    
+</body>
+</html>
+
